@@ -1,0 +1,13 @@
+version: '3.2'
+services:
+  api-mongo:
+    image: mongo
+    container_name: api-mongo
+    ports:
+      - 10013:27017
+    volumes:
+     - ./data/:/data/db/
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: api
+      MONGO_INITDB_ROOT_PASSWORD: api-mongo
